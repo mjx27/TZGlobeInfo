@@ -2,10 +2,6 @@ import path from 'path';
 import withBundleAnalyzer from '@next/bundle-analyzer';
 import type { NextConfig } from 'next';
 
-console.log('Starting Next.js build...');
-console.log('NODE_ENV', process.env.NODE_ENV);
-console.log('ANALYZE', process.env['ANALYZE']);
-
 const isProd = process.env.NODE_ENV === 'production';
 
 const bundleAnalyzer = withBundleAnalyzer({
@@ -15,8 +11,8 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 const contentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'nonce-{nonce-value}';
-  style-src 'self' 'nonce-{nonce-value}';
+  script-src 'self' 'unsafe-inline';
+  style-src 'self' 'unsafe-inline';
   img-src 'self' data: https://your-cdn.com;
   font-src 'self' https://fonts.gstatic.com;
   connect-src 'self' https://api.example.com;
