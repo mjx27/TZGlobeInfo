@@ -1,7 +1,7 @@
 'use client';
 import { usePathname } from 'next/navigation';
 
-import { Link, LINK_STYLES_NAMES } from '@/shared/ui/Link';
+import { Link, LINK_STYLE_NAMES } from '@/shared/ui/Link';
 
 import { LINK_HEADER_PATHS } from '../lib/constants';
 
@@ -14,7 +14,7 @@ export const HeaderNav = () => {
           key={name}
           href={path}
           isActive={path === globalPath}
-          styleType={LINK_STYLES_NAMES.LINED}
+          styleType={LINK_STYLE_NAMES.LINED}
         >
           {name}
         </Link>

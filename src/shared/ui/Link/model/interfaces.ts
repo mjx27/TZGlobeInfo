@@ -1,6 +1,6 @@
 import type { LinkProps } from 'next/link';
 
-import type { TLinkStylesNames } from './types';
+import type { TLinkStyleNames } from './types';
 
 export interface ILinkStyleProps {
   isActive: boolean;
@@ -11,5 +11,5 @@ export interface ILinkProps extends LinkProps, ILinkStyleProps {
 }
 
 export interface ILinkFabricProps extends ILinkProps {
-  styleType: TLinkStylesNames;
+  styleType: TLinkStyleNames;
 }
