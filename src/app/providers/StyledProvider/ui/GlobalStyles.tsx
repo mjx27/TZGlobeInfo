@@ -56,6 +56,15 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
     }
   }
 
+  footer {
+    padding: ${theme.paddings.paddingBig};
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${theme.colors.colorMainDarker};
+  }
+
   button {
     background-color: transparent;
     border: none;
