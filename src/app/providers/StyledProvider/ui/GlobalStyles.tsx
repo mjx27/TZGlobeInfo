@@ -37,6 +37,12 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
     font-size: 1rem;
   }
 
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
   #modal-root {
     position: absolute;
     z-index: 1000;

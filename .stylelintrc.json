@@ -13,6 +13,7 @@
     "function-name-case": null,
     "declaration-block-no-duplicate-properties": true,
     "media-feature-range-notation": "prefix",
+    "annotation-no-unknown": null,
     "declaration-property-value-no-unknown": [
       true,
       {
