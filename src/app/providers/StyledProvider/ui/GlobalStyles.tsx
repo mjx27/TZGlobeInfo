@@ -56,6 +56,15 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
     }
   }
 
+  main {
+    width: 100%;
+
+    section {
+      padding: ${theme.paddings.paddingBig} 0;
+      overflow: hidden;
+    }
+  }
+
   footer {
     padding: ${theme.paddings.paddingBig};
     width: 100%;

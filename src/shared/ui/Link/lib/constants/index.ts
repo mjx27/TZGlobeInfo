@@ -8,7 +8,7 @@ export const LINK_STYLE_NAMES = createIdentityObject({
   LINED: 'LINED',
 } as const);
 
-export const LINK_STYLES_ELEMENTS: {
+export const LINK_STYLE_ELEMENTS: {
   [K in TLinkStyleNames]: React.ComponentType<ILinkProps>;
 } = {
   LINED: StyledLinkLined,
