@@ -10,6 +10,7 @@ export const StyledLink = styled(Link, {
   padding: ${(props) =>
     `${props.theme.paddings.paddingLittle1} ${props.theme.paddings.paddingMedium1}`};
   position: relative;
+  height: fit-content;
   transition: color ${(props) => props.theme.transitions.transitionLinearFast};
   text-decoration: none;
   cursor: pointer;
