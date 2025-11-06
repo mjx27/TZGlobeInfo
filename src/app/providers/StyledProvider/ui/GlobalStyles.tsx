@@ -15,6 +15,9 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
 
   body {
     background-color: ${theme.colors.colorMain};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   h1 {
@@ -35,6 +38,22 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
 
   p {
     font-size: 1rem;
+  }
+
+  header {
+    padding: ${theme.paddings.paddingMedium2} 0;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: ${theme.gaps.gapMedium1};
+    }
   }
 
   button {
