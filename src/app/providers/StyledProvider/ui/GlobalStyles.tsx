@@ -38,6 +38,7 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
 
   p {
     font-size: 1rem;
+    text-align: justify;
   }
 
   header {

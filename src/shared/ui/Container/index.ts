@@ -1,1 +1,1 @@
-export { StyledContainer } from './ui/StyledContainer';
+export { Container } from './ui/Container';

@@ -1,25 +1,15 @@
-import type {
-  TAlignContent,
-  TAlignItems,
-  TDisplay,
-  TGap,
-  TJustifyContent,
-  TJustifyItems,
-  TPadding,
-} from '@/shared/model/types/TStyles';
+import type { CONTAINER_STYLE_KEYS } from '../lib/constants';
 
-export type StyleTypeMap = {
-  height: string;
-  width: string;
-  padding: TPadding;
-  display: TDisplay;
-  alignItems: TAlignItems;
-  alignContent: TAlignContent;
-  justifyItems: TJustifyItems;
-  justifyContent: TJustifyContent;
-  gap: TGap;
-};
+import type { IStyleKeys } from './interfaces';
 
-export type TContainerStyleProps = {
-  [K in keyof StyleTypeMap]?: StyleTypeMap[K];
-};
+type StyleKeysFromValues = keyof IStyleKeys;
+export type TContainerStyleProps = Partial<IStyleKeys>;
+export type TContainerStyleKeys = (typeof CONTAINER_STYLE_KEYS)[number];
+
+type AssertKeysMatch = TContainerStyleKeys extends StyleKeysFromValues
+  ? StyleKeysFromValues extends TContainerStyleKeys
+    ? true
+    : never
+  : never;
+
+const _assertKeysMatch: AssertKeysMatch = true;

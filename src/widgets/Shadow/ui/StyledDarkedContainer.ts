@@ -35,5 +35,6 @@ export const StyledShadow = styled.section<TShadowStyleProps>`
 
   p {
     width: max(50%, 500px);
+    font-size: 1.124rem;
   }
 `;

@@ -1,5 +1,11 @@
-import type { StyleTypeMap } from '../../model/types';
-
-export const containerStyleKeys = Object.keys({} as StyleTypeMap) as Array<
-  keyof StyleTypeMap
->;
+export const CONTAINER_STYLE_KEYS = [
+  'height',
+  'width',
+  'padding',
+  'display',
+  'alignItems',
+  'alignContent',
+  'justifyItems',
+  'justifyContent',
+  'gap',
+] as const;
