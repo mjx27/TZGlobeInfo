@@ -13,9 +13,10 @@ export const StyledContainer = styled('div', {
   height: ${({ height = 'auto' }) => height};
   width: ${({ width = '100%' }) => width};
   display: ${({ display = 'flex' }) => display};
-  place-items: ${({ alignItems = 'center' }) => alignItems}
-    ${({ justifyItems }) => justifyItems};
-  place-content: ${({ alignContent }) => alignContent}
-    ${({ justifyContent = 'center' }) => justifyContent};
+  flex-direction: ${({ flexDirection = 'flex' }) => flexDirection};
+  place-items: ${({ alignItems = 'center', justifyItems = 'center' }) =>
+    `${alignItems} ${justifyItems}`};
+  place-content: ${({ alignContent = 'center', justifyContent = 'center' }) =>
+    `${alignContent} ${justifyContent}`};
   gap: ${({ gap = '0' }) => gap};
 `;

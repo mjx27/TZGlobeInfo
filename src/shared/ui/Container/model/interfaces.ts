@@ -2,6 +2,7 @@ import type {
   TAlignContent,
   TAlignItems,
   TDisplay,
+  TFlexDirection,
   TGap,
   TJustifyContent,
   TJustifyItems,
@@ -18,4 +19,5 @@ export interface IStyleKeys {
   justifyItems: TJustifyItems;
   justifyContent: TJustifyContent;
   gap: TGap;
+  flexDirection: TFlexDirection;
 }

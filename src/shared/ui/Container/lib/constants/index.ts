@@ -8,4 +8,5 @@ export const CONTAINER_STYLE_KEYS = [
   'justifyItems',
   'justifyContent',
   'gap',
+  'flexDirection',
 ] as const;

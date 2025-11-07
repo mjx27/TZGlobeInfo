@@ -59,6 +59,9 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
 
   main {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: ${theme.gaps.gapMedium2};
 
     section {
       padding: ${theme.paddings.paddingBig} 0;
