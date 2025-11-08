@@ -1,17 +1,21 @@
 'use client';
+import type { ITechCardProps} from '@/shared/ui/TechCard';
 import { TechCard } from '@/shared/ui/TechCard';
-
-import { STACK_SECTION_CARDS } from '../lib/constants/StackSection';
 
 import { StyledStackSection } from './StyledStackSection';
 
-export const StackSection = () => {
+interface IProps {
+  title: string;
+  cards: ITechCardProps[];
+}
+
+export const StackSection = ({ title, cards }: IProps) => {
   return (
     <StyledStackSection as="section" flexDirection="column" gap="40px">
-      <h2>Tech Stack</h2>
+      <h2>{title}</h2>
       <div>
-        {STACK_SECTION_CARDS.map((card) => (
-          <TechCard {...card} />
+        {cards.map((card) => (
+          <TechCard key={card.name} {...card} />
         ))}
       </div>
     </StyledStackSection>
