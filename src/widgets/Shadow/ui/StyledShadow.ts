@@ -1,9 +1,9 @@
 'use client';
 import styled from '@emotion/styled';
 
-import type { TShadowStyleProps } from '../model/types';
+import type { TShadowProps } from '../model/types';
 
-export const StyledShadow = styled.section<TShadowStyleProps>`
+export const StyledShadow = styled.section<TShadowProps>`
   position: relative;
   height: 100%;
   width: 100%;
@@ -19,7 +19,7 @@ export const StyledShadow = styled.section<TShadowStyleProps>`
     content: '';
     background-color: ${(props) => props.theme.colors.colorMainDarker};
     z-index: 2;
-    opacity: ${(props) => props.alpha};
+    opacity: ${(props) => props.alpha ?? '0.5'};
   }
 
   * {

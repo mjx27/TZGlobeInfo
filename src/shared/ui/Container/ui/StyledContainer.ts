@@ -1,13 +1,13 @@
 'use client';
 import styled from '@emotion/styled';
 
-import { CONTAINER_STYLE_KEYS } from '../lib/constants/keys';
-import type { IStyleKeys } from '../model/interfaces';
+import { CONTAINER_STYLE_PROPS } from '../lib/constants/props';
 import type { TContainerStyleProps } from '../model/types';
 
 export const StyledContainer = styled('div', {
   shouldForwardProp: (prop) =>
-    prop !== 'as' && !CONTAINER_STYLE_KEYS.includes(prop as keyof IStyleKeys),
+    prop !== 'as' &&
+    !CONTAINER_STYLE_PROPS.includes(prop as keyof TContainerStyleProps),
 })<TContainerStyleProps>`
   padding: ${({ padding = '0' }) => padding};
   height: ${({ height = 'auto' }) => height};
@@ -21,11 +21,12 @@ export const StyledContainer = styled('div', {
 
 export const SCFlexRow = styled(StyledContainer)`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 export const SCFlexColumn = styled(StyledContainer)`
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
 `;
 
 export const SCGrid = styled(StyledContainer)`

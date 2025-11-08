@@ -7,7 +7,7 @@ import type {
   TPadding,
 } from '@/shared/model/types/TStyles';
 
-export interface IStyleKeys {
+export interface IContainerStyleProps {
   height: string;
   width: string;
   padding: TPadding;

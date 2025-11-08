@@ -1,4 +1,5 @@
-import { CONTAINER_STYLE_NAMES } from '../../Container/lib/constants/names';
+import { CONTAINER_STYLE_NAMES } from '@ui/Container';
+
 import { Link, LINK_STYLE_NAMES } from '../../Link';
 import type { ITechCardProps } from '../model/interfaces';
 
