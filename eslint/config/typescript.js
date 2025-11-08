@@ -33,6 +33,7 @@ export default [
           varsIgnorePattern: '^_',
           caughtErrorsIgnorePattern: '^_',
           destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^(?:_|createShouldForwardProp)$',
         },
       ],
       '@typescript-eslint/consistent-type-imports': 'error',

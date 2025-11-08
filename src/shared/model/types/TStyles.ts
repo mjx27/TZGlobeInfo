@@ -23,6 +23,18 @@ type TFlexAlignment =
 export type TJustifyContent = TFlexAlignment;
 export type TAlignContent = TFlexAlignment;
 
+export type TDisplayProps = Partial<{
+  display: TDisplay;
+  flexDirection: TFlexDirection;
+  alignItems: TAlignItems;
+  justifyItems: TJustifyItems;
+  alignContent: TAlignContent;
+  justifyContent: TJustifyContent;
+  gap: TGap;
+  gridTemplate: string;
+  padding: TPadding;
+}>;
+
 export type TIconSize =
   | '10px'
   | '15px'

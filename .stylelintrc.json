@@ -4,19 +4,21 @@
   "plugins": ["stylelint-order"],
   "rules": {
     "property-no-unknown": null,
+    "declaration-property-value-allowed-list": {
+      "opacity": ["0", "1", "0.[0-9]+"]
+    },
     "function-url-quotes": "always",
     "value-keyword-case": null,
     "shorthand-property-no-redundant-values": true,
     "function-name-case": null,
     "declaration-block-no-duplicate-properties": true,
     "media-feature-range-notation": "prefix",
-    "annotation-no-unknown": null,
     "declaration-property-value-no-unknown": [
       true,
       {
         "ignoreProperties": {
           "should-forward-prop": [".+", "/.*/i"],
-          "/.+/": ["^\\$\\{.*\\}$"]
+          "/.+/": ["/props\\.[a-zA-Z]+/i"]
         }
       }
     ],
