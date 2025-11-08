@@ -15,6 +15,9 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
 
   body {
     background-color: ${theme.colors.colorMain};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   h1 {
@@ -35,6 +38,50 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
 
   p {
     font-size: 1rem;
+    text-align: justify;
+  }
+
+  header {
+    padding: ${theme.paddings.paddingMedium2} 0;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: ${theme.gaps.gapMedium1};
+    }
+  }
+
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: ${theme.gaps.gapMedium2};
+
+    section {
+      padding: ${theme.paddings.paddingBig} 0;
+      overflow: hidden;
+    }
+  }
+
+  footer {
+    padding: ${theme.paddings.paddingBig};
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${theme.colors.colorMainDarker};
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
 
   #modal-root {
