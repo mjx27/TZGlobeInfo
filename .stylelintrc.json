@@ -4,9 +4,6 @@
   "plugins": ["stylelint-order"],
   "rules": {
     "property-no-unknown": null,
-    "declaration-property-value-allowed-list": {
-      "opacity": ["0", "1", "0.[0-9]+"]
-    },
     "function-url-quotes": "always",
     "value-keyword-case": null,
     "shorthand-property-no-redundant-values": true,
@@ -19,7 +16,7 @@
       {
         "ignoreProperties": {
           "should-forward-prop": [".+", "/.*/i"],
-          "/.+/": ["/props\\.[a-zA-Z]+/i"]
+          "/.+/": ["^\\$\\{.*\\}$"]
         }
       }
     ],

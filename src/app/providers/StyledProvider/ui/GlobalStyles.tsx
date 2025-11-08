@@ -38,6 +38,7 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
 
   p {
     font-size: 1rem;
+    text-align: justify;
   }
 
   header {
@@ -53,6 +54,18 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
     nav {
       display: flex;
       gap: ${theme.gaps.gapMedium1};
+    }
+  }
+
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: ${theme.gaps.gapMedium2};
+
+    section {
+      padding: ${theme.paddings.paddingBig} 0;
+      overflow: hidden;
     }
   }
 
