@@ -1,5 +1,6 @@
 'use client';
-import type { ITechCardProps} from '@/shared/ui/TechCard';
+import { CONTAINER_STYLE_NAMES } from '@/shared/ui/Container/lib/constants/names';
+import type { ITechCardProps } from '@/shared/ui/TechCard';
 import { TechCard } from '@/shared/ui/TechCard';
 
 import { StyledStackSection } from './StyledStackSection';
@@ -11,7 +12,11 @@ interface IProps {
 
 export const StackSection = ({ title, cards }: IProps) => {
   return (
-    <StyledStackSection as="section" flexDirection="column" gap="40px">
+    <StyledStackSection
+      as="section"
+      gap="40px"
+      styleType={CONTAINER_STYLE_NAMES.FLEX_COLUMN}
+    >
       <h2>{title}</h2>
       <div>
         {cards.map((card) => (
