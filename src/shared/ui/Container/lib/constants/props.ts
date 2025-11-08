@@ -1,12 +1,10 @@
-export const CONTAINER_STYLE_KEYS = [
+export const CONTAINER_STYLE_PROPS = [
   'height',
   'width',
   'padding',
-  'display',
   'alignItems',
   'alignContent',
   'justifyItems',
   'justifyContent',
   'gap',
-  'flexDirection',
 ] as const;

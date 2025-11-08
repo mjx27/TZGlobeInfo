@@ -10,9 +10,7 @@ export const LINK_HEADER_NAMES = createIdentityObject({
   GITHUB: 'GITHUB',
 } as const);
 
-export const LINK_HEADER_PATHS: {
-  [T in TLinkHeaderNames]: string;
-} = {
+export const LINK_HEADER_PATHS: Record<TLinkHeaderNames, string> = {
   HOME: '/',
   TEST: '/test',
   FAVORITES: '/favorites',

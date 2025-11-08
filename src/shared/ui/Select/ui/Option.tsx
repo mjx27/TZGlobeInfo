@@ -1,8 +1,8 @@
-import type { IOption } from '../model/IOption';
+import type { IOptionStyleProps } from '../model/IOption';
 
 import { StyledOption } from './StyledOption';
 
-interface IProps extends IOption {
+interface IProps extends IOptionStyleProps {
   option: string;
   handlePick: () => void;
 }

@@ -2,10 +2,12 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
+import { LINK_STYLE_PROPS } from '../lib/constants/props';
 import type { ILinkStyleProps } from '../model/interfaces';
 
 export const StyledLink = styled(Link, {
-  shouldForwardProp: (prop) => prop !== 'isActive',
+  shouldForwardProp: (prop) =>
+    !LINK_STYLE_PROPS.includes(prop as keyof ILinkStyleProps),
 })`
   padding: ${(props) =>
     `${props.theme.paddings.paddingLittle1} ${props.theme.paddings.paddingMedium1}`};

@@ -1,15 +1,8 @@
-import type { CONTAINER_STYLE_KEYS } from '../lib/constants';
+import type { TPartialWithUndefined } from '@/shared/model/types/TPartialWithUndefined';
 
-import type { IStyleKeys } from './interfaces';
+import type { CONTAINER_STYLE_NAMES } from '../lib/constants/names';
 
-type StyleKeysFromValues = keyof IStyleKeys;
-export type TContainerStyleProps = Partial<IStyleKeys>;
-export type TContainerStyleKeys = (typeof CONTAINER_STYLE_KEYS)[number];
+import type { IContainerStyleProps } from './interfaces';
 
-type AssertKeysMatch = TContainerStyleKeys extends StyleKeysFromValues
-  ? StyleKeysFromValues extends TContainerStyleKeys
-    ? true
-    : never
-  : never;
-
-const _assertKeysMatch: AssertKeysMatch = true;
+export type TContainerStyleNames = keyof typeof CONTAINER_STYLE_NAMES;
+export type TContainerStyleProps = TPartialWithUndefined<IContainerStyleProps>;

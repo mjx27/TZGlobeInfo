@@ -1,7 +1,5 @@
-import type { SHADOW_STYLE_DEFAULT } from '../lib/constants';
+import type { TPartialWithUndefined } from '@/shared/model/types/TPartialWithUndefined';
 
-type TShadowStylesKeys = Lowercase<keyof typeof SHADOW_STYLE_DEFAULT>;
+import type { IShadowProps } from './interfaces';
 
-export type TShadowStyleProps = {
-  [T in TShadowStylesKeys]?: string;
-};
+export type TShadowProps = TPartialWithUndefined<IShadowProps>;

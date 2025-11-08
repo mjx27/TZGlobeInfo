@@ -1,1 +1,1 @@
-export { Shadow } from './ui/DarkedContainer';
+export { Shadow } from './ui/Shadow';

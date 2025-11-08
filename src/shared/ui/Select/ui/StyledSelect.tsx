@@ -1,9 +1,11 @@
 import styled from '@emotion/styled';
 
+import { SELECT_STYLE_PROPS } from '../lib/constants/props';
 import { type ISelectStyleProps } from '../model/ISelect';
 
 export const StyledSelect = styled('div', {
-  shouldForwardProp: (prop) => prop !== 'isActive',
+  shouldForwardProp: (prop) =>
+    !SELECT_STYLE_PROPS.includes(prop as keyof ISelectStyleProps),
 })<ISelectStyleProps>`
   height: ${(props) => (props.isActive ? '200px' : '40px')};
   width: 300px;
