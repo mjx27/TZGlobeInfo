@@ -1,5 +1,5 @@
 'use client';
-import { CONTAINER_STYLE_NAMES } from '@/shared/ui/Container';
+import { Container, CONTAINER_STYLE_NAMES } from '@/shared/ui/Container';
 import { type ITechCardProps, TechCard } from '@/shared/ui/TechCard';
 
 import { StyledSectionTitledCards } from './StyledSectionTitledCards';
@@ -17,11 +17,15 @@ export const SectionTitledCards = ({ title, cards }: IProps) => {
       styleType={CONTAINER_STYLE_NAMES.FLEX_COLUMN}
     >
       <h2>{title}</h2>
-      <div>
+      <Container
+        gap="10px"
+        justifyContent="space-evenly"
+        styleType={CONTAINER_STYLE_NAMES.FLEX_ROW}
+      >
         {cards.map((card) => (
           <TechCard key={card.name} {...card} />
         ))}
-      </div>
+      </Container>
     </StyledSectionTitledCards>
   );
 };
