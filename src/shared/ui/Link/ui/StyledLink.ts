@@ -8,7 +8,7 @@ import type { ILinkStyleProps } from '../model/interfaces';
 export const StyledLink = styled(Link, {
   shouldForwardProp: (prop) =>
     !LINK_STYLE_PROPS.includes(prop as keyof ILinkStyleProps),
-})`
+})<ILinkStyleProps>`
   padding: ${(props) =>
     `${props.theme.paddings.paddingLittle1} ${props.theme.paddings.paddingMedium1}`};
   position: relative;
@@ -18,14 +18,14 @@ export const StyledLink = styled(Link, {
   cursor: pointer;
 `;
 
-export const StyledLinkLined = styled(StyledLink)<ILinkStyleProps>`
+export const StyledLinkLined = styled(StyledLink)`
   color: ${(props) => props.isActive && props.theme.colors.colorAdd1};
 
   &::before,
   &::after {
     content: ' ';
     position: absolute;
-    height: 2.5px;
+    height: 2px;
     width: ${(props) => (props.isActive ? '75%' : '0%')};
     background-color: ${(props) => props.theme.colors.colorAdd1};
     transition: width ${(props) => props.theme.transitions.transitionEaseSlow};
@@ -51,4 +51,45 @@ export const StyledLinkLined = styled(StyledLink)<ILinkStyleProps>`
     }
  }
  `}
+`;
+
+export const StyledLinkFilled = styled(StyledLink)`
+  color: ${(props) =>
+    props.isActive
+      ? props.theme.colors.colorTextMain
+      : props.theme.colors.colorAdd1};
+  text-align: center;
+
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: -1;
+    height: 50%;
+    width: ${(props) => (props.isActive ? '100%' : '0%')};
+    transition: width ${(props) => props.theme.transitions.transitionEaseSlow};
+    content: ' ';
+    background-color: ${(props) => props.theme.colors.colorAdd1}40;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+    bottom: 0;
+  }
+
+  &:hover {
+    color: ${(props) =>
+      props.isActive
+        ? props.theme.colors.colorAdd1
+        : props.theme.colors.colorTextMain};
+
+    &::before,
+    &::after {
+      width: ${(props) => (props.isActive ? '0%' : '100%')};
+    }
+  }
 `;

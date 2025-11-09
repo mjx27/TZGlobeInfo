@@ -34,6 +34,7 @@ export const constTheme: ITheme = {
     colorTextAdd1: '#a6a6a6',
     colorTextAdd2: '#000',
     colorAdd1: '#A5C05B',
-    colorError: '#fa4e42',
+    colorAddYellow: '#ddc332',
+    colorAddRed: '#fa4e42',
   },
 };

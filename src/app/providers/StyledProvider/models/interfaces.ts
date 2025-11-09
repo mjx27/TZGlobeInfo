@@ -42,7 +42,8 @@ interface IColors {
   colorTextAdd2: string;
   colorMain: string;
   colorAdd1: string;
-  colorError: string;
+  colorAddRed: string;
+  colorAddYellow: string;
 }
 
 export interface ITheme {
