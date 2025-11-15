@@ -14,9 +14,11 @@ export class CountryQueryBuilder extends GraphQLQueryBuilder<TCountryBuilderFiel
   withCode(): this {
     return this.withField(COUNTRY_BUILDER_FIELDS.CODE);
   }
+
   withName(): this {
     return this.withField(COUNTRY_BUILDER_FIELDS.NAME);
   }
+
   withCapital(): this {
     return this.withField(COUNTRY_BUILDER_FIELDS.CAPITAL);
   }
@@ -24,26 +26,28 @@ export class CountryQueryBuilder extends GraphQLQueryBuilder<TCountryBuilderFiel
   withLanguages(fn: (b: CountryLanguageQueryBuilder) => void): this {
     const sub = new CountryLanguageQueryBuilder();
     fn(sub);
-    this.withSubfield(COUNTRY_BUILDER_FIELDS.LANGUAGES, () => sub);
+    this.withSubfield(COUNTRY_BUILDER_FIELDS.LANGUAGES, sub);
     return this;
   }
 }
 
 export class CountryLanguageQueryBuilder extends GraphQLQueryBuilder<TLanguagesBuilderFields> {
-  constructor() {
-    super('languages');
+  constructor(root = COUNTRY_BUILDER_FIELDS.LANGUAGES) {
+    super(root);
   }
 
   withCode(): this {
     return this.withField(LANGUAGES_BUILDER_FIELDS.CODE);
   }
+
   withName(): this {
     return this.withField(LANGUAGES_BUILDER_FIELDS.NAME);
   }
+
   withCountries(fn: (b: CountryQueryBuilder) => void): this {
     const sub = new CountryQueryBuilder();
     fn(sub);
-    this.withSubfield(LANGUAGES_BUILDER_FIELDS.COUNTRIES, () => sub);
+    this.withSubfield(LANGUAGES_BUILDER_FIELDS.COUNTRIES, sub);
     return this;
   }
 }

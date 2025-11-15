@@ -21,19 +21,19 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
   }
 
   h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
     font-size: 2.5rem;
   }
 
-  h3 {
+  h2 {
     font-size: 2rem;
   }
 
-  h4 {
+  h3 {
     font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.125rem;
   }
 
   p {
@@ -62,9 +62,11 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
     display: flex;
     flex-direction: column;
     gap: ${theme.gaps.gapMedium2};
+    align-items: center;
 
     section {
       padding: ${theme.paddings.paddingBig} 0;
+      width: 90%;
       overflow: hidden;
     }
   }
