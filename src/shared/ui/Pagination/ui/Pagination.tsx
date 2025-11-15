@@ -1,8 +1,9 @@
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { Dispatch } from 'react';
 
 import { Container, CONTAINER_STYLE_NAMES } from '../../Container';
+import { Icon } from '../../Icon';
+import { ICON_STYLE_NAMES } from '../../Icon/lib/constants/names';
 
 interface IProps {
   activePage: number;
@@ -29,12 +30,22 @@ export const Pagination = ({
       justifyContent="center"
       styleType={CONTAINER_STYLE_NAMES.FLEX_ROW}
     >
-      <FontAwesomeIcon icon={faArrowLeft} size="2x" onClick={handlePrev} />
+      <Icon
+        icon={faArrowLeft}
+        iconSize="25px"
+        styleType={ICON_STYLE_NAMES.COLORED}
+        onClick={handlePrev}
+      />
 
       <span>
         Page {activePage + 1} of {totalPages}
       </span>
-      <FontAwesomeIcon icon={faArrowRight} size="2x" onClick={handleNext} />
+      <Icon
+        icon={faArrowRight}
+        iconSize="25px"
+        styleType={ICON_STYLE_NAMES.COLORED}
+        onClick={handleNext}
+      />
     </Container>
   );
 };

@@ -41,12 +41,6 @@ export const StyledCountryCard = styled.article`
     gap: ${(props) => props.theme.gaps.gapLittle1};
   }
 
-  div:nth-child(1) {
-    box-shadow: inset 0 0 7px 20px
-      ${(props) => props.theme.colors.colorMainDarker};
-    z-index: 3;
-  }
-
   span {
     font-size: 0.875rem;
     color: ${(props) => props.theme.colors.colorTextAdd1};
