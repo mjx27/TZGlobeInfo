@@ -26,10 +26,6 @@ export const useCountries = (options: UseCountriesOptions = {}) => {
 
       try {
         const builder = new CountryQueryBuilder();
-
-        // -----------------------------
-        // 🔥 Корректная обработка опций
-        // -----------------------------
         (
           Object.entries(memoOptions) as [
             keyof UseCountriesOptions,

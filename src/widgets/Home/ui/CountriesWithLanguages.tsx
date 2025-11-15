@@ -8,6 +8,7 @@ import { CountryCard } from '@/entities/Country/ui/CountryCard';
 import { Container, CONTAINER_STYLE_NAMES } from '@/shared/ui/Container';
 import { Error } from '@/shared/ui/Error';
 import { Loader } from '@/shared/ui/Loader';
+import { Pagination } from '@/shared/ui/Pagination';
 
 import { CARDS_PER_PAGE } from '../lib/constants';
 
@@ -25,12 +26,10 @@ export const CountriesWithLanguages: React.FC = () => {
     languages: (lang) => lang.withCode().withName(),
   });
 
-  // Всегда вызываем хук, чтобы порядок не менялся
   const totalPages = countries
     ? Math.max(1, Math.ceil(countries.length / CARDS_PER_PAGE))
     : 0;
 
-  // Следим, чтобы не выйти за границы при изменении данных
   useEffect(() => {
     if (!countries) {
       return;
@@ -56,7 +55,7 @@ export const CountriesWithLanguages: React.FC = () => {
     <Container
       as="section"
       gap="20px"
-      justifyContent="space-between"
+      justifyContent="space-evenly"
       styleType={CONTAINER_STYLE_NAMES.FLEX_ROW}
       width="90%"
     >
@@ -64,34 +63,11 @@ export const CountriesWithLanguages: React.FC = () => {
         <CountryCard {...country} key={country.code ?? country.name} />
       ))}
 
-      <div
-        style={{
-          display: 'flex',
-          gap: '10px',
-          marginTop: '20px',
-          width: '100%',
-        }}
-      >
-        <button
-          disabled={activePage === 0}
-          type="button"
-          onClick={() => setActivePage((p) => Math.max(0, p - 1))}
-        >
-          Prev
-        </button>
-
-        <span>
-          Page {activePage + 1} of {totalPages}
-        </span>
-
-        <button
-          disabled={activePage + 1 >= totalPages}
-          type="button"
-          onClick={() => setActivePage((p) => Math.min(totalPages - 1, p + 1))}
-        >
-          Next
-        </button>
-      </div>
+      <Pagination
+        activePage={activePage}
+        setActivePage={setActivePage}
+        totalPages={totalPages}
+      />
     </Container>
   );
 };

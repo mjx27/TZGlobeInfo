@@ -13,6 +13,10 @@ const dynamicGlobalStyles = (theme: ITheme) => css`
     font-family: sans-serif;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: ${theme.colors.colorMain};
     display: flex;

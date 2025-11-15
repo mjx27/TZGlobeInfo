@@ -13,7 +13,7 @@ const contentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
-  img-src 'self' data: https://your-cdn.com;
+  img-src 'self' data: https://your-cdn.com https://flagcdn.com;
   font-src 'self' https://fonts.gstatic.com;
   connect-src 'self' https://api.example.com;
 `;
@@ -41,6 +41,11 @@ const nextConfig: NextConfig = {
     unoptimized: false,
     formats: ['image/avif', 'image/webp'] as const,
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'flagcdn.com',
+        pathname: '/**',
+      },
       {
         protocol: 'https',
         hostname: 'your-cdn.com',
